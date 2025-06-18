@@ -1,8 +1,8 @@
 <template>
-    <footer class="footer">
-      <div class="footer-container">
-        <!-- Footer Top -->
-        <!-- <div class="footer-top">
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Footer Top -->
+      <!-- <div class="footer-top">
           <div class="footer-section">
             <div class="footer-logo">
               <h3>Claude 4</h3>
@@ -59,212 +59,215 @@
             </ul>
           </div>
         </div> -->
-  
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-content">
-            <p>&copy; 2025 眾饕企業社 版權所有</p>
-            <div class="footer-bottom-links">
-              <span>台灣 🇹🇼</span>
-              <span>繁體中文</span>
-            </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>&copy; 2025 {{ companyName }} 版權所有</p>
+          <div class="footer-bottom-links">
+            <span>台灣 🇹🇼</span>
           </div>
         </div>
       </div>
-    </footer>
-  </template>
-  
-  <style scoped>
-  .footer {
-    background-color: var(--background-secondary);
-    border-top: 1px solid var(--border-light);
-    margin-top: 4rem;
-  }
-  
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  
+    </div>
+  </footer>
+</template>
+
+<script setup>
+const { companyName } = systemStore();
+</script>
+
+<style scoped>
+.footer {
+  background-color: var(--background-secondary);
+  border-top: 1px solid var(--border-light);
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding: 4rem 0;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.footer-section h4 {
+  font-size: 1.1rem;
+}
+
+.footer-logo p {
+  color: var(--text-accent);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.footer-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 280px;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--background-card);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-light);
+}
+
+.social-links a:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-links a.router-link-active {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-light);
+  padding: 2rem 0;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom-content p {
+  color: var(--text-accent);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-links span {
+  color: var(--text-accent);
+}
+
+.language-selector {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.language-selector:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   .footer-top {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-section:nth-child(4),
+  .footer-section:nth-child(5) {
+    grid-column: 2 / -1;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    gap: 3rem;
-    padding: 4rem 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
-  
-  .footer-section h3,
-  .footer-section h4 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 0 1rem;
   }
-  
-  .footer-section h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 0;
   }
-  
-  .footer-section h4 {
-    font-size: 1.1rem;
+
+  .footer-section:nth-child(4),
+  .footer-section:nth-child(5) {
+    grid-column: 1;
+    display: block;
   }
-  
-  .footer-logo p {
-    color: var(--text-accent);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-description {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    max-width: 280px;
-  }
-  
-  .social-links {
-    display: flex;
+
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
     gap: 1rem;
   }
-  
-  .social-links a {
-    display: inline-flex;
-    align-items: center;
+
+  .social-links {
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: var(--background-card);
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    border: 1px solid var(--border-light);
   }
-  
-  .social-links a:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
-  }
-  
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .footer-links li {
-    margin-bottom: 0.75rem;
-  }
-  
-  .footer-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-links a:hover,
-  .footer-links a.router-link-active {
-    color: var(--primary-color);
-  }
-  
-  .footer-bottom {
-    border-top: 1px solid var(--border-light);
+}
+
+@media (max-width: 480px) {
+  .footer-top {
     padding: 2rem 0;
   }
-  
-  .footer-bottom-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+
+  .social-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
   }
-  
-  .footer-bottom-content p {
-    color: var(--text-accent);
-    font-size: 0.9rem;
-    margin: 0;
-  }
-  
-  .footer-bottom-links {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    font-size: 0.9rem;
-  }
-  
-  .footer-bottom-links span {
-    color: var(--text-accent);
-  }
-  
-  .language-selector {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  .language-selector:hover {
-    color: var(--primary-color);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .footer-top {
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 2rem;
-    }
-    
-    .footer-section:nth-child(4),
-    .footer-section:nth-child(5) {
-      grid-column: 2 / -1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .footer-container {
-      padding: 0 1rem;
-    }
-    
-    .footer-top {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 3rem 0;
-    }
-    
-    .footer-section:nth-child(4),
-    .footer-section:nth-child(5) {
-      grid-column: 1;
-      display: block;
-    }
-    
-    .footer-bottom-content {
-      flex-direction: column;
-      text-align: center;
-      gap: 1rem;
-    }
-    
-    .social-links {
-      justify-content: center;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .footer-top {
-      padding: 2rem 0;
-    }
-    
-    .social-links a {
-      width: 36px;
-      height: 36px;
-      font-size: 1rem;
-    }
-  }
-  </style>
+}
+</style>

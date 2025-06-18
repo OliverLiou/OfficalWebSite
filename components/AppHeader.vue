@@ -2,7 +2,7 @@
   <header class="header">
     <nav class="nav-container">
       <!-- Logo -->
-      <NuxtLink to="/" class="logo">眾饕</NuxtLink>
+      <NuxtLink to="/" class="logo-yellow-luxury">{{ companyName }}</NuxtLink>
 
       <!-- Desktop Navigation -->
       <ul class="nav-links desktop-only">
@@ -29,7 +29,7 @@
 
 <script setup>
 const useSystemStore = systemStore();
-const { toggleSidebar, setNavMenus } = useSystemStore;
+const { toggleSidebar, setNavMenus, companyName } = useSystemStore;
 
 // Add scroll effect
 const navs = computed(() => useSystemStore.$state.navMenus);
@@ -72,16 +72,6 @@ onMounted(() => {
   height: 80px;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-decoration: none;
-}
-
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -110,7 +100,7 @@ onMounted(() => {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--primary-gradient);
   transition: width 0.3s ease;
 }
 

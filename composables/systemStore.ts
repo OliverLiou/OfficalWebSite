@@ -1,7 +1,8 @@
 export const systemStore = defineStore("systemStore", {
   state: () => ({
     sidebarOpen: false,
-    navMenus: [] as Array<any>
+    navMenus: [] as Array<any>,
+    companyName: "公司名稱",
   }),
   actions: {
     toggleSidebar() {

@@ -9,7 +9,7 @@
   <!-- Sidebar -->
   <aside class="sidebar" :class="{ 'sidebar-open': sidebarOpen }">
     <div class="sidebar-header">
-      <div class="logo">Claude 4</div>
+      <div class="logo-yellow-luxury">{{ companyName }}</div>
       <button
         class="close-button"
         @click="closeSidebar()"
@@ -33,7 +33,7 @@
 
 <script setup>
 const useSystemStore = systemStore();
-const { toggleSidebar, closeSidebar, navMenus } = useSystemStore;
+const { toggleSidebar, closeSidebar, navMenus, companyName } = useSystemStore;
 const sidebarOpen = computed(() => useSystemStore.$state.sidebarOpen);
 
 const navs = computed(() => useSystemStore.$state.navMenus);
