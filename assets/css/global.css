@@ -1,76 +1,106 @@
 :root {
-  --primary-color: #fb923c; /* 暖橘色 - 專業活力 */
+  /* Apple風格色彩系統 - 保留暖色調 */
+  --primary-color: #f59e0b; /* 暖金色 - 主要品牌色 */
   --secondary-color: #ea580c; /* 深橘色 - 強調重點 */
-  --accent-color: #fbbf24; /* 明亮黃色 - 突出元素 */
-  --tertiary-color: #f59e0b; /* 金黃色 - 輔助色彩 */
-  --warm-beige: #fef3c7; /* 暖米色 - 背景色 */
-  --light-orange: #fed7aa; /* 淺橘色 - 柔和背景 */
-  --text-primary: #1f2937;
-  --text-secondary: #4b5563;
-  --text-accent: #6b7280;
-  --text-muted: #9ca3af;
-  --background-primary: rgba(255, 255, 255, 0.9);
-  --background-secondary: #f0f0f0;
-  --background-card: rgba(255, 255, 255, 0.8);
-  --background-hover: rgba(255, 255, 255, 0.95);
-  --border-light: rgba(0, 0, 0, 0.08);
-  --border-medium: rgba(0, 0, 0, 0.12);
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
-  --accent-gradient: linear-gradient(135deg, #d6eafa 0%, #e6f3ff 100%);
-
-  /* 中性色彩 */
-  --white: #ffffff;
-  --cream: #fffbeb;                   /* 奶油色 */
-  --light-gray: #f9fafb;
-  --medium-gray: #e5e7eb;
-  --warm-gray: #9ca3af;               /* 暖灰色 */
-  --text-dark: #374151;               /* 深灰文字色 */
-  --text-medium: #6b7280;             /* 中灰文字色 */
+  --accent-color: #fbbf24; /* 明亮黃色 - 互動元素 */
+  --tertiary-color: #d97706; /* 暖橘色 - 輔助色彩 */
   
-  /* 漸層背景 */
-  --primary-gradient: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
-  --secondary-gradient: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fed7aa 100%);
-  --card-gradient: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
+  /* Apple風格中性色系 */
+  --system-background: #ffffff;
+  --secondary-background: #f8fafc;
+  --tertiary-background: #f1f5f9;
+  --grouped-background: #f2f2f7;
+  
+  /* Apple風格文字色系 */
+  --label-primary: #000000;
+  --label-secondary: #3c3c43;
+  --label-tertiary: #3c3c4399;
+  --label-quaternary: #3c3c432e;
+  
+  /* 語義化文字色 */
+  --text-primary: #1d1d1f;
+  --text-secondary: #86868b;
+  --text-accent: #6e6e73;
+  --text-muted: #a1a1a6;
+  
+  /* Apple風格背景色 */
+  --background-primary: #ffffff;
+  --background-secondary: #f5f5f7;
+  --background-card: rgba(255, 255, 255, 0.9);
+  --background-hover: #f0f0f0;
+  --background-elevated: #ffffff;
+  
+  /* Apple風格邊框色 */
+  --separator: #d2d2d7;
+  --border-light: rgba(0, 0, 0, 0.04);
+  --border-medium: rgba(0, 0, 0, 0.08);
+  --border-heavy: rgba(0, 0, 0, 0.12);
+  
+  /* Apple風格陰影 */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  
+  /* 品牌漸層 */
+  --primary-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --secondary-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  --card-gradient: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   --hero-gradient: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
   
-  /* 陰影 - 暖色調 */
-  --shadow-light: 0 2px 4px rgba(217, 119, 6, 0.1);
-  --shadow-medium: 0 4px 8px rgba(217, 119, 6, 0.15);
-  --shadow-heavy: 0 8px 16px rgba(217, 119, 6, 0.2);
-  --shadow-warm: 0 4px 12px rgba(251, 191, 36, 0.3);
+  /* Apple風格陰影系統 */
+  --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-warm: 0 4px 16px rgba(245, 158, 11, 0.2);
 
-  --font-primary: 'Microsoft JhengHei', 'Helvetica Neue', Arial, sans-serif;
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 1.875rem;
-  --font-size-4xl: 2.25rem;
+  /* Apple風格字體系統 */
+  --font-system: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+  --font-chinese: 'SF Pro SC', 'PingFang SC', 'Microsoft JhengHei', 'Heiti TC', sans-serif;
+  --font-primary: var(--font-system), var(--font-chinese);
   
-  /* 間距 */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
-  --spacing-3xl: 4rem;
+  /* Apple風格字體大小 */
+  --font-size-caption2: 0.6875rem;  /* 11px */
+  --font-size-caption1: 0.75rem;    /* 12px */
+  --font-size-footnote: 0.8125rem;  /* 13px */
+  --font-size-subheadline: 0.9375rem; /* 15px */
+  --font-size-callout: 1rem;        /* 16px */
+  --font-size-body: 1.0625rem;      /* 17px */
+  --font-size-headline: 1.0625rem;  /* 17px */
+  --font-size-title3: 1.25rem;      /* 20px */
+  --font-size-title2: 1.375rem;     /* 22px */
+  --font-size-title1: 1.75rem;      /* 28px */
+  --font-size-large-title: 2.125rem; /* 34px */
   
-  /* 圓角 */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
+  /* Apple風格間距系統 */
+  --spacing-2xs: 0.125rem;  /* 2px */
+  --spacing-xs: 0.25rem;    /* 4px */
+  --spacing-sm: 0.5rem;     /* 8px */
+  --spacing-md: 0.75rem;    /* 12px */
+  --spacing-lg: 1rem;       /* 16px */
+  --spacing-xl: 1.25rem;    /* 20px */
+  --spacing-2xl: 1.5rem;    /* 24px */
+  --spacing-3xl: 2rem;      /* 32px */
+  --spacing-4xl: 2.5rem;    /* 40px */
+  --spacing-5xl: 3rem;      /* 48px */
+  --spacing-6xl: 4rem;      /* 64px */
   
-  /* 過渡動畫 */
-  --transition-fast: 0.15s ease-in-out;
-  --transition-normal: 0.3s ease-in-out;
-  --transition-slow: 0.5s ease-in-out;
+  /* Apple風格圓角系統 */
+  --radius-xs: 0.125rem;    /* 2px */
+  --radius-sm: 0.25rem;     /* 4px */
+  --radius-md: 0.375rem;    /* 6px */
+  --radius-lg: 0.5rem;      /* 8px */
+  --radius-xl: 0.75rem;     /* 12px */
+  --radius-2xl: 1rem;       /* 16px */
+  --radius-3xl: 1.5rem;     /* 24px */
+  --radius-full: 9999px;
+  
+  /* Apple風格動畫系統 */
+  --spring-duration: 0.5s;
+  --spring-easing: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-smooth: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-snappy: 0.15s cubic-bezier(0.4, 0, 1, 1);
+  --transition-normal: 0.3s ease;
 }
 
 * {
@@ -80,27 +110,37 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  /* background-color: var(--background-primary); */
+  font-family: var(--font-primary);
+  background-color: var(--background-primary);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.47059;
   min-height: 100vh;
+  font-size: var(--font-size-body);
+  letter-spacing: -0.022em;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* 按鈕樣式 */
+/* Apple風格按鈕系統 */
 .button {
-  padding: 1rem 2rem;
-  border-radius: 50px;
+  padding: var(--spacing-md) var(--spacing-2xl);
+  border-radius: var(--radius-full);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+  font-weight: 590;
+  font-size: var(--font-size-callout);
+  transition: var(--transition-smooth);
   position: relative;
-  overflow: hidden;
   border: none;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  min-height: 44px;
+  letter-spacing: -0.022em;
+  font-family: var(--font-primary);
+  white-space: nowrap;
 }
 
 .btn-primary {
@@ -110,53 +150,60 @@ body {
 }
 
 .btn-secondary {
-  background-color: var(--background-card);
+  background-color: var(--background-elevated);
   color: var(--text-primary);
-  border: 2px solid var(--border-medium);
+  border: 1px solid var(--separator);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   box-shadow: var(--shadow-sm);
 }
 
 .button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
-  background-color: #f97316;
+  background-color: var(--tertiary-color);
   box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary:hover {
-  background-color: var(--background-hover);
+  transform: scale(1.05);
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
 
-/* logo */
+.button:active {
+  transform: translateY(0);
+  transition: var(--transition-snappy);
+}
+
+/* Apple風格品牌標誌 */
 .logo-yellow-luxury {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-  font-size: 30px;
-  font-weight: 500;
-  color: #fbbf24;
-  letter-spacing: 1px;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-title1);
+  font-weight: 600;
+  color: var(--primary-color);
+  letter-spacing: -0.022em;
   text-decoration: none;
   position: relative;
-  transition: all 0.4s ease;
-  text-shadow: 0 1px 3px rgba(251, 191, 36, 0.2);
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
 }
 
 .logo-yellow-luxury::after {
   content: '';
   position: absolute;
-  bottom: -5px;
-  left: 50%;
+  bottom: -2px;
+  left: 0;
   width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #fbbf24, #f59e0b);
-  transform: translateX(-50%);
-  transition: width 0.4s ease;
-  border-radius: 2px;
+  height: 2px;
+  background: var(--accent-color);
+  transform-origin: left;
+  transition: width var(--transition-smooth);
+  border-radius: var(--radius-xs);
 }
 
 .logo-yellow-luxury:hover::after {
@@ -164,27 +211,69 @@ body {
 }
 
 .logo-yellow-luxury:hover {
-  color: #f59e0b;
-  transform: scale(1.03);
+  color: var(--accent-color);
+  transform: scale(1.02);
 }
 
 .pageContent {
-  margin: 2rem 3rem;
+  margin: var(--spacing-3xl) var(--spacing-5xl);
 }
 
-/* 動畫 */
+/* Apple風格動畫 */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .fade-in-up {
-  animation: fadeInUp 0.8s ease-out;
+  animation: fadeInUp var(--spring-duration) var(--spring-easing);
+}
+
+.slide-in {
+  animation: slideIn var(--transition-smooth);
+}
+
+.scale-in {
+  animation: scaleIn var(--transition-smooth);
+}
+
+/* Apple風格工具類 */
+.glass-effect {
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background-color: rgba(255, 255, 255, 0.72);
+}
+
+.elevated-surface {
+  background-color: var(--background-elevated);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-xl);
 }

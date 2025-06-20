@@ -55,53 +55,58 @@ onMounted(() => {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  background: rgba(251, 251, 253, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--separator);
+  transition: var(--transition-smooth);
 }
 
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: var(--spacing-lg) var(--spacing-3xl);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  height: 52px;
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: var(--spacing-4xl);
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .nav-links a {
-  color: #475569;
+  color: var(--text-primary);
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-weight: 400;
+  font-size: var(--font-size-body);
+  letter-spacing: -0.022em;
+  transition: var(--transition-smooth);
   position: relative;
+  padding: var(--spacing-sm) 0;
 }
 
 .nav-links a:hover,
 .nav-links a.router-link-active {
-  color: #1e293b;
+  color: var(--primary-color);
 }
 
 .nav-links a::after {
   content: "";
   position: absolute;
-  bottom: -4px;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--primary-gradient);
-  transition: width 0.3s ease;
+  background: var(--primary-color);
+  transition: width var(--transition-smooth);
+  border-radius: var(--radius-xs);
 }
 
 .nav-links a:hover::after,
@@ -109,30 +114,36 @@ onMounted(() => {
   width: 100%;
 }
 
-/* Mobile Menu Button */
+/* Apple風格行動選單按鈕 */
 .menu-button {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--spacing-xs);
   background: none;
   border: none;
-  padding: 8px;
+  padding: var(--spacing-sm);
   cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: var(--transition-smooth);
+}
+
+.menu-button:hover {
+  background-color: var(--background-hover);
 }
 
 .hamburger {
-  width: 24px;
-  height: 3px;
-  background: #475569;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: var(--radius-xs);
+  transition: var(--transition-smooth);
 }
 
 .menu-button:hover .hamburger {
-  background: #1e293b;
+  background: var(--primary-color);
 }
 
-/* Responsive */
+/* 響應式設計 */
 .desktop-only {
   display: flex;
 }
@@ -151,7 +162,8 @@ onMounted(() => {
   }
 
   .nav-container {
-    padding: 1rem;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    height: 44px;
   }
 }
 </style>

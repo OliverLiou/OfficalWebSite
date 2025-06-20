@@ -110,64 +110,70 @@ const achievements = [
 <style scoped>
 .home-page {
   min-height: 100vh;
+  background-color: var(--background-primary);
 }
+
 .hero {
-  min-height: 80vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
-  /* background: var(--cream); */
+  padding: var(--spacing-3xl) var(--spacing-xl);
 }
 
 .hero-content {
   max-width: 800px;
+  animation: fadeInUp var(--spring-duration) var(--spring-easing);
 }
 
 .hero-title {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-2xl);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.8rem);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 400;
-  color: #6b7280;
-  margin: 2.5rem 0;
-  letter-spacing: 2px;
-  word-spacing: 8px;
-  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: var(--spacing-4xl) 0;
+  letter-spacing: 0.025em;
+  word-spacing: 0.25em;
+  line-height: 1.5;
 }
 
 .hero-description {
-  font-size: 1.1rem;
+  font-size: var(--font-size-body);
   color: var(--text-accent);
-  margin-bottom: 3rem;
-  line-height: 1.8;
+  margin-bottom: var(--spacing-5xl);
+  line-height: 1.47059;
+  letter-spacing: -0.022em;
 }
 
 .cta-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--spacing-2xl);
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .features {
-  padding: 3rem 2rem;
+  padding: var(--spacing-6xl) var(--spacing-3xl);
   margin: 0 auto;
+  max-width: 1200px;
 }
 
-/* Feature Card 樣式 */
+/* Apple風格功能卡片 */
 .feature-card {
-  background: var(--card-gradient);
+  background: var(--background-elevated);
   border-radius: var(--radius-2xl);
-  padding: var(--spacing-xl);
-  box-shadow: var(--shadow-light);
-  transition: var(--transition-normal);
-  border: 1px solid var(--warm-beige);
+  padding: var(--spacing-3xl);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  border: 1px solid var(--separator);
   position: relative;
   overflow: hidden;
 }
@@ -178,95 +184,101 @@ const achievements = [
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 3px;
   background: var(--primary-gradient);
   border-radius: var(--radius-sm);
 }
 
 .feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--border-medium);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
 }
 
 .feature-cardHeader {
   display: flex;
   align-items: center;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
 }
 
 .feature-icon {
-  font-size: var(--font-size-3xl);
-  margin-right: var(--spacing-md);
-  padding: var(--spacing-md);
-  background: var(--light-orange);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-light);
+  font-size: var(--font-size-large-title);
+  margin-right: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
 }
 
 .feature-title {
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  color: var(--primary-color);
+  font-size: var(--font-size-title2);
+  font-weight: 600;
+  color: var(--text-primary);
   margin: 0;
+  letter-spacing: -0.022em;
 }
 
 .feature-description {
-  color: var(--text-medium);
-  line-height: 1.7;
+  color: var(--text-secondary);
+  line-height: 1.47059;
   margin: 0;
+  font-size: var(--font-size-subheadline);
+  letter-spacing: -0.022em;
 }
 
 .section-title {
   text-align: center;
-  font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 800;
-  margin-bottom: 3rem;
-  background: var(--text-secondary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: var(--spacing-5xl);
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-3xl);
+  margin-top: var(--spacing-5xl);
 }
 
 .stats {
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-6xl) var(--spacing-3xl);
   position: relative;
+  background-color: var(--background-secondary);
+  margin: var(--spacing-6xl) 0;
 }
 
 .stats .container-food {
   position: relative;
   z-index: 1;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--spacing-sm);
   max-width: 1000px;
   margin: 0 auto;
 }
 
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-xl);
+  margin: 0 auto;
+}
+
 .stat-item {
-  background: var(--white);
-  padding: var(--spacing-2xl) var(--spacing-lg);
+  background: var(--background-elevated);
+  padding: var(--spacing-3xl) var(--spacing-xl);
   border-radius: var(--radius-2xl);
   text-align: center;
   position: relative;
-  transition: var(--transition-normal);
-  border: 1px solid rgba(217, 119, 6, 0.08);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: var(--transition-smooth);
+  border: 1px solid var(--separator);
+  box-shadow: var(--shadow-sm);
 }
 
 .stat-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
 }
 
 .stat-item::before {
@@ -274,7 +286,7 @@ const achievements = [
   position: absolute;
   top: 0;
   left: 50%;
-  width: 40px;
+  width: 30px;
   height: 3px;
   background: var(--primary-color);
   transform: translateX(-50%);
@@ -282,41 +294,63 @@ const achievements = [
 }
 
 .stat-number {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   display: block;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
   color: var(--primary-color);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   line-height: 1;
 }
 
 .stat-label {
-  font-size: var(--font-size-base);
-  color: var(--text-medium);
-  font-weight: bolder;
-  letter-spacing: 0.3px;
-  margin-top: 15px;
+  font-size: var(--font-size-callout);
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: -0.022em;
+  margin: 0;
 }
 
+/* Apple風格響應式設計 */
 @media (max-width: 768px) {
   .hero {
-    min-height: 70vh;
-    padding: 1rem;
+    min-height: 75vh;
+    padding: var(--spacing-3xl) var(--spacing-lg);
   }
 
   .cta-buttons {
     flex-direction: column;
     align-items: center;
+    gap: var(--spacing-lg);
   }
 
-  .btn {
+  .button {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
   }
 
   .features {
-    padding: 4rem 1rem;
+    padding: var(--spacing-5xl) var(--spacing-lg);
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .stats {
+    padding: var(--spacing-5xl) var(--spacing-lg);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

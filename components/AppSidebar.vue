@@ -40,17 +40,17 @@ const navs = computed(() => useSystemStore.$state.navMenus);
 </script>
 
 <style scoped>
-/* Backdrop */
+/* Apple風格背景遮罩 */
 .sidebar-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1998;
   opacity: 0;
-  animation: fadeIn 0.3s ease forwards;
+  animation: fadeIn var(--transition-smooth) ease forwards;
 }
 
 @keyframes fadeIn {
@@ -59,19 +59,20 @@ const navs = computed(() => useSystemStore.$state.navMenus);
   }
 }
 
-/* Sidebar */
+/* Apple風格側邊欄 */
 .sidebar {
   position: fixed;
   top: 0;
-  left: -300px;
-  width: 300px;
+  left: -320px;
+  width: 320px;
   height: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
+  background: rgba(251, 251, 253, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
   z-index: 1999;
-  transition: left 0.3s ease;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1);
+  transition: left var(--transition-smooth);
+  border-right: 1px solid var(--separator);
+  box-shadow: var(--shadow-xl);
 }
 
 .sidebar-open {
@@ -82,42 +83,42 @@ const navs = computed(() => useSystemStore.$state.navMenus);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  border-bottom: 1px solid var(--separator);
+  height: 88px;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: var(--font-size-title2);
+  font-weight: 600;
+  color: var(--primary-color);
+  letter-spacing: -0.022em;
 }
 
 .close-button {
   background: none;
   border: none;
-  font-size: 2rem;
-  color: #475569;
+  font-size: var(--font-size-title1);
+  color: var(--text-secondary);
   cursor: pointer;
   padding: 0;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  transition: all 0.3s ease;
+  border-radius: var(--radius-full);
+  transition: var(--transition-smooth);
+  font-weight: 300;
 }
 
 .close-button:hover {
-  background: rgba(0, 0, 0, 0.1);
-  color: #1e293b;
+  background: var(--background-hover);
+  color: var(--text-primary);
 }
 
 .sidebar-nav {
-  padding: 1rem 0;
+  padding: var(--spacing-lg) 0;
 }
 
 .nav-list {
@@ -129,24 +130,27 @@ const navs = computed(() => useSystemStore.$state.navMenus);
 .nav-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.5rem;
-  color: #475569;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  color: var(--text-primary);
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-weight: 400;
+  font-size: var(--font-size-body);
+  letter-spacing: -0.022em;
+  transition: var(--transition-smooth);
   border-left: 3px solid transparent;
+  min-height: 44px;
 }
 
 .nav-item:hover,
 .nav-item.router-link-active {
-  background: rgba(102, 126, 234, 0.1);
-  color: #1e293b;
-  border-left-color: #667eea;
+  background: rgba(245, 158, 11, 0.08);
+  color: var(--primary-color);
+  border-left-color: var(--primary-color);
 }
 
 .nav-icon {
-  font-size: 1.2rem;
+  font-size: var(--font-size-title3);
 }
 
 /* Only show on mobile */

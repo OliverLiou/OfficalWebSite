@@ -80,76 +80,79 @@ const { companyName } = systemStore();
 <style scoped>
 .footer {
   background-color: var(--background-secondary);
-  border-top: 1px solid var(--border-light);
-  margin-top: 4rem;
+  border-top: 1px solid var(--separator);
+  margin-top: var(--spacing-6xl);
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--spacing-3xl);
 }
 
 .footer-top {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-  gap: 3rem;
-  padding: 4rem 0;
+  gap: var(--spacing-5xl);
+  padding: var(--spacing-6xl) 0;
 }
 
 .footer-section h3,
 .footer-section h4 {
   color: var(--text-primary);
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-xl);
   font-weight: 600;
+  letter-spacing: -0.022em;
 }
 
 .footer-section h3 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-title2);
   color: var(--primary-color);
 }
 
 .footer-section h4 {
-  font-size: 1.1rem;
+  font-size: var(--font-size-title3);
 }
 
 .footer-logo p {
-  color: var(--text-accent);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-size: var(--font-size-footnote);
+  margin-bottom: var(--spacing-xl);
 }
 
 .footer-description {
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  line-height: 1.47059;
+  margin-bottom: var(--spacing-3xl);
   max-width: 280px;
+  font-size: var(--font-size-subheadline);
 }
 
 .social-links {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-lg);
 }
 
 .social-links a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: var(--background-card);
-  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  background-color: var(--background-elevated);
+  border-radius: var(--radius-xl);
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  border: 1px solid var(--border-light);
+  font-size: var(--font-size-title3);
+  transition: var(--transition-smooth);
+  border: 1px solid var(--separator);
 }
 
 .social-links a:hover {
   background-color: var(--primary-color);
   color: white;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
 }
 
 .footer-links {
@@ -159,14 +162,15 @@ const { companyName } = systemStore();
 }
 
 .footer-links li {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--spacing-md);
 }
 
 .footer-links a {
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
+  font-size: var(--font-size-subheadline);
+  transition: var(--transition-smooth);
+  letter-spacing: -0.022em;
 }
 
 .footer-links a:hover,
@@ -175,8 +179,8 @@ const { companyName } = systemStore();
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--border-light);
-  padding: 2rem 0;
+  border-top: 1px solid var(--separator);
+  padding: var(--spacing-3xl) 0;
 }
 
 .footer-bottom-content {
@@ -184,42 +188,44 @@ const { companyName } = systemStore();
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: var(--spacing-xl);
 }
 
 .footer-bottom-content p {
-  color: var(--text-accent);
-  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-size: var(--font-size-footnote);
   margin: 0;
+  letter-spacing: -0.022em;
 }
 
 .footer-bottom-links {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  font-size: 0.9rem;
+  gap: var(--spacing-2xl);
+  font-size: var(--font-size-footnote);
 }
 
 .footer-bottom-links span {
-  color: var(--text-accent);
+  color: var(--text-secondary);
 }
 
 .language-selector {
   color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: var(--transition-smooth);
+  letter-spacing: -0.022em;
 }
 
 .language-selector:hover {
   color: var(--primary-color);
 }
 
-/* Responsive Design */
+/* Apple風格響應式設計 */
 @media (max-width: 1024px) {
   .footer-top {
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 2rem;
+    gap: var(--spacing-4xl);
   }
 
   .footer-section:nth-child(4),
@@ -227,19 +233,19 @@ const { companyName } = systemStore();
     grid-column: 2 / -1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: var(--spacing-4xl);
   }
 }
 
 @media (max-width: 768px) {
   .footer-container {
-    padding: 0 1rem;
+    padding: 0 var(--spacing-xl);
   }
 
   .footer-top {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 3rem 0;
+    gap: var(--spacing-4xl);
+    padding: var(--spacing-5xl) 0;
   }
 
   .footer-section:nth-child(4),
@@ -251,7 +257,7 @@ const { companyName } = systemStore();
   .footer-bottom-content {
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
+    gap: var(--spacing-xl);
   }
 
   .social-links {
@@ -261,13 +267,13 @@ const { companyName } = systemStore();
 
 @media (max-width: 480px) {
   .footer-top {
-    padding: 2rem 0;
+    padding: var(--spacing-4xl) 0;
   }
 
   .social-links a {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-body);
   }
 }
 </style>
